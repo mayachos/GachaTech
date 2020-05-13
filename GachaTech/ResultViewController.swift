@@ -15,8 +15,12 @@ class ResultViewController: UIViewController {
     // モンスターを表示する画像
     @IBOutlet var monsterImageView: UIImageView!
     
+    // モンスターの名前を表示
+    @IBOutlet var monsterNameLabel: UILabel!
+    
     // モンスター画像を保存しておく配列
     var monsterArray: [UIImage]!
+    var monsterName: [String]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +40,12 @@ class ResultViewController: UIViewController {
                         UIImage(named:"monster009.png")!,
                         UIImage(named:"monster010.png")!]
         
+        monsterName = ["A", "B", "C", "D", "E",
+                       "F", "G", "H", "I", "J"]
+        
         // ランダムに選んだモンスターを表示させる
         monsterImageView.image = monsterArray[number]
+        monsterNameLabel.text = monsterName[number]
         
         if number == 9 {
             haikeiImageView.image = UIImage(named: "bg_gold.png")
